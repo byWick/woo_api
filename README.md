@@ -1,2 +1,2 @@
 # woo_api
-Woocommerce + Marketplace Api 
+Woocommerce Marketplace Integration Api 
