@@ -2,8 +2,9 @@ const mysql = require('mysql2');
 
 const con = mysql.createConnection({
   host: "localhost",
-  user: "yourusername",
-  password: "yourpassword"
+  user: "root",
+  password: "",
+  database:'woobazar_db'
 });
 
 con.connect(function(err) {
