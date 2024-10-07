@@ -3,6 +3,8 @@ const router = express.Router();
 const generalRouteController = require('./controllers/generalRouteController');
 const authController = require('./controllers/authController');
 const firmController = require('./controllers/firmController');
+const storeController = require('./controllers/storeController');
+
 const reqLogger = require('./middleware/requestLogger');
 
 const generalLoggers = [reqLogger]
@@ -14,6 +16,6 @@ router.post('/logout',...generalLoggers,authController.logout);
 //FIRM ROUTES
 router.get('/my-firm',...generalLoggers,firmController.getMyFirm);
 //STORE ROUTES
-router.post('/store')
+router.post('/store/products',...generalLoggers,storeController.getProducts)
 
 module.exports = router;
