@@ -22,7 +22,7 @@ function loggedIn(userId) {
     minute: '2-digit', 
     hour12: false, // 24 saat formatı
     timeZone: 'Europe/Istanbul' // Türkiye saat dilimi
-  })}\t${clientIP}\t ${userId} logged in`
+  })}\t${clientIP}\t ${userId} logged in\n`
 
   fs.appendFile(authLogPath, logMessage, (err) => {
     if (err) {
@@ -43,7 +43,7 @@ function loggedOut(userId) {
       minute: '2-digit', 
       hour12: false, // 24 saat formatı
       timeZone: 'Europe/Istanbul' // Türkiye saat dilimi
-    })}\t${clientIP}\t ${userId} logged out`
+    })}\t${clientIP}\t ${userId} logged out\n`
   
     fs.appendFile(authLogPath, logMessage, (err) => {
       if (err) {

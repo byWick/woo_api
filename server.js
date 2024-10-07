@@ -3,11 +3,11 @@ require('dotenv').config();
 const router = require('./routes');
 const xss = require('xss-clean');
 const crypto = require('crypto');
-
+const bodyParser = require('body-parser');
 
 const app = express();
 app.use(xss());
-app.use(express.json());
+app.use(bodyParser.json());
 app.use(express.urlencoded({extended:true}))
 app.use(router);
 

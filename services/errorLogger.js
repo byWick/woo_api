@@ -22,7 +22,7 @@ function logToError(message) {
     minute: '2-digit', 
     hour12: false, // 24 saat formatı
     timeZone: 'Europe/Istanbul' // Türkiye saat dilimi
-  })}\t${clientIP}\t ${message}`
+  })}\t${clientIP}\t ${message}\n`
 
   fs.appendFile(errorLogPath, logMessage, (err) => {
     if (err) {
@@ -33,4 +33,4 @@ function logToError(message) {
 
 }
 
-module.exports = {errorLogger};
+module.exports = {logToError};
