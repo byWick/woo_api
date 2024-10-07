@@ -1,5 +1,7 @@
-POST  http://localhost:3001/logout
+GET  http://localhost/wordpress/wp-json/wc/v3/products?consumer_key=ck_874c7e26ee76b70fded70349ddd13a4672a291cb&consumer_secret=cs_94c38d586d3016aaaf0faf7b1c08f0a41bb81ae0
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTcyODMxNjYzOH0.5OVoLf1P0mNllCVKI_MTtJB_BVaLD65a9MdznNBuiDA
+
+
+
 
 

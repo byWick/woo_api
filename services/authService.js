@@ -25,6 +25,9 @@ const loginControl = async (browser, platform, username, pass) => {
         const result = await queryAsync("SELECT * FROM firms WHERE vUname = ? AND vPass = ?", [username, hashedPass]);
 
         if (result.length > 0) {
+            if (result[0].vActive == 0){
+                return {status:403,message:'firm membership period expired'}
+            }
             const userId = result[0].id;
             const token = jwt.sign({ uid: userId }, 'woo_api_secret');
 
