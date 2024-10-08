@@ -1,11 +1,8 @@
 POST  http://localhost:3001/store/products
+
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTcyODQxODU4Nn0.8F2e7K1dXNf5z7QFKpQ1PbVbWOgJ16WDwwHVwZxlDSU
 
 {
-    "storeName":"Sitem1"
+    "storeName" : "Sitem1"
 }
-
-
-
-
-

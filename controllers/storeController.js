@@ -14,18 +14,15 @@ const queryAsync = (query, values) => {
 
 const getProducts = async (req,res) => {
     const {storeName} = req.body
+    console.log(req.body)
     if(!storeName) return res.json({status:500,message:'store name required'});
     let storeInfoRaw = await queryAsync("SELECT * FROM stores WHERE vStrName = ? LIMIT 1",[storeName]);
     if(storeInfoRaw.length > 0 ){
         const apiKey = storeInfoRaw[0].vApiKey;
         const apiSecret = storeInfoRaw[0].vApiSecret;
         const baseUrl = storeInfoRaw[0].vUrl + "/wp-json/wc/v3";
-        const auth = {
-            username:apiKey,
-            password:apiSecret
-        }
 
-        const response = await axios.get(`${baseUrl}/products`,{auth});
+        const response = await axios.get(`http://localhost/wordpress/wp-json/wc/v3/orders?consumer_key=ck_874c7e26ee76b70fded70349ddd13a4672a291cb&consumer_secret=cs_94c38d586d3016aaaf0faf7b1c08f0a41bb81ae0`);
         res.json(response);
 
     }else{
